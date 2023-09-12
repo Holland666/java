@@ -1,0 +1,70 @@
+用if语句解决java问题 求运费
+package text;
+import java.util.Scanner; 
+
+public class text {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	int distance;
+	double num,price,weight;
+	Scanner input=new Scanner(System.in); //输入语句
+	System.out.println("请输入货物重量：");//输出语句
+    weight=input.nextDouble();  //读取输入数据
+	System.out.println("请输入行驶距离：");
+	distance=input.nextInt();
+	int t=distance/100;
+	if(t==0) {price=1.0;
+	}else if(t==1||t==2) {price=0.9;
+	}else if(t==3||t==4) {price=0.8;
+	}else if(t>=5&&t<=9) {price=0.7;
+	}else{price=0.6;
+	}
+    num=distance*weight*price;
+    System.out.println("运费="+num);
+	}
+}
+用switch语句解决java问题 求运费
+package text;
+
+import java.util.Scanner;
+
+public class text2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	int distance;
+	double num,price,weight;
+	Scanner input=new Scanner(System.in);
+	System.out.println("请输入货物重量：");
+    weight=input.nextDouble();
+	System.out.println("请输入行驶距离：");
+	distance=input.nextInt();
+	int t=distance/100;
+	switch(t) {
+	case 0:
+		price=1.0;
+		break;
+	case 1:
+	case 2:
+		price=0.9;
+		break;
+	case 3:
+	case 4:
+		price=0.8;
+		break;
+	case 5:
+	case 6:
+	case 7:
+	case 8:
+	case 9:
+		price=0.7;
+		break;
+	default:
+		price=0.6;
+	}
+	num=distance*weight*price;
+    System.out.println("运费="+num);
+	}
+
+}
